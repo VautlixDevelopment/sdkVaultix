@@ -1,0 +1,53 @@
+{
+  "name": "@vaultix/sdk",
+  "version": "1.0.0",
+  "description": "Official Vaultix SDK for Node.js and TypeScript",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "test": "vitest",
+    "lint": "eslint src",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "vaultix",
+    "payments",
+    "pix",
+    "brazil",
+    "payment-gateway",
+    "sdk"
+  ],
+  "author": "Vaultix <dev@vaultix.global>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vaultix/vaultix-sdk"
+  },
+  "homepage": "https://docs.vaultix.global",
+  "bugs": {
+    "url": "https://github.com/vaultix/vaultix-sdk/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0"
+  }
+}
