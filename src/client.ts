@@ -62,7 +62,7 @@ export class VaultixClient {
   async request<T>(
     method: 'GET' | 'POST' | 'PUT' | 'DELETE',
     path: string,
-    data?: Record<string, unknown>,
+    data?: any,
     retryCount = 0
   ): Promise<T> {
     const url = new URL(path, this.baseUrl)
@@ -93,7 +93,7 @@ export class VaultixClient {
 
       clearTimeout(timeoutId)
 
-      const json = await response.json()
+      const json: any = await response.json()
 
       if (!response.ok) {
         // Check if we should retry
@@ -144,21 +144,21 @@ export class VaultixClient {
   /**
    * GET request helper
    */
-  get<T>(path: string, params?: Record<string, unknown>): Promise<T> {
+  get<T>(path: string, params?: any): Promise<T> {
     return this.request<T>('GET', path, params)
   }
 
   /**
    * POST request helper
    */
-  post<T>(path: string, data?: Record<string, unknown>): Promise<T> {
+  post<T>(path: string, data?: any): Promise<T> {
     return this.request<T>('POST', path, data)
   }
 
   /**
    * PUT request helper
    */
-  put<T>(path: string, data?: Record<string, unknown>): Promise<T> {
+  put<T>(path: string, data?: any): Promise<T> {
     return this.request<T>('PUT', path, data)
   }
 

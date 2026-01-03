@@ -46,6 +46,6 @@ export class BalanceResource {
    * ```
    */
   async listTransactions(params?: BalanceTransactionListParams): Promise<ListResponse<BalanceTransaction>> {
-    return this.client.get<ListResponse<BalanceTransaction>>('/v1/balance/transactions', params as Record<string, unknown>)
+    return this.client.get<ListResponse<BalanceTransaction>>('/v1/balance/transactions', params)
   }
 }

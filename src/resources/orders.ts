@@ -95,7 +95,7 @@ export class Orders {
    * ```
    */
   async retrieve(id: string, params?: { expand?: 'items' }): Promise<Order> {
-    return this.client.get<Order>(`/v1/orders/${id}`, params as Record<string, unknown>)
+    return this.client.get<Order>(`/v1/orders/${id}`, params)
   }
 
   /**
@@ -115,7 +115,7 @@ export class Orders {
    * ```
    */
   async list(params?: OrderListParams): Promise<ListResponse<Order>> {
-    return this.client.get<ListResponse<Order>>('/v1/orders', params as Record<string, unknown>)
+    return this.client.get<ListResponse<Order>>('/v1/orders', params)
   }
 
   /**

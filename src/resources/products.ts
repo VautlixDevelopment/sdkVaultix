@@ -123,7 +123,7 @@ export class Products {
    * ```
    */
   async create(params: ProductCreateParams): Promise<Product> {
-    return this.client.post<Product>('/v1/products', params as Record<string, unknown>)
+    return this.client.post<Product>('/v1/products', params)
   }
 
   /**
@@ -155,7 +155,7 @@ export class Products {
    * ```
    */
   async list(params?: ProductListParams): Promise<ListResponse<Product>> {
-    return this.client.get<ListResponse<Product>>('/v1/products', params as Record<string, unknown>)
+    return this.client.get<ListResponse<Product>>('/v1/products', params)
   }
 
   /**
@@ -170,7 +170,7 @@ export class Products {
    * ```
    */
   async update(id: string, params: ProductUpdateParams): Promise<Product> {
-    return this.client.put<Product>(`/v1/products/${id}`, params as Record<string, unknown>)
+    return this.client.put<Product>(`/v1/products/${id}`, params)
   }
 
   /**

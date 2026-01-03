@@ -32,7 +32,7 @@ export class PaymentLinks {
    * ```
    */
   async create(params: PaymentLinkCreateParams): Promise<PaymentLink> {
-    return this.client.post<PaymentLink>('/v1/payment-links', params as Record<string, unknown>)
+    return this.client.post<PaymentLink>('/v1/payment-links', params)
   }
 
   /**
@@ -46,7 +46,7 @@ export class PaymentLinks {
    * List all payment links
    */
   async list(params?: PaymentLinkListParams): Promise<ListResponse<PaymentLink>> {
-    return this.client.get<ListResponse<PaymentLink>>('/v1/payment-links', params as Record<string, unknown>)
+    return this.client.get<ListResponse<PaymentLink>>('/v1/payment-links', params)
   }
 
   /**
@@ -75,6 +75,6 @@ export class PaymentLinks {
    * ```
    */
   async listPayments(id: string, params?: { limit?: number }): Promise<ListResponse<Charge>> {
-    return this.client.get<ListResponse<Charge>>(`/v1/payment-links/${id}/payments`, params as Record<string, unknown>)
+    return this.client.get<ListResponse<Charge>>(`/v1/payment-links/${id}/payments`, params)
   }
 }

@@ -33,7 +33,7 @@ export class Refunds {
    * ```
    */
   async create(params: RefundCreateParams): Promise<Refund> {
-    return this.client.post<Refund>('/v1/refunds', params as Record<string, unknown>)
+    return this.client.post<Refund>('/v1/refunds', params)
   }
 
   /**
@@ -55,6 +55,6 @@ export class Refunds {
    * ```
    */
   async list(params?: RefundListParams): Promise<ListResponse<Refund>> {
-    return this.client.get<ListResponse<Refund>>('/v1/refunds', params as Record<string, unknown>)
+    return this.client.get<ListResponse<Refund>>('/v1/refunds', params)
   }
 }

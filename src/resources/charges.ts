@@ -33,7 +33,7 @@ export class Charges {
    * ```
    */
   async create(params: ChargeCreateParams): Promise<Charge> {
-    return this.client.post<Charge>('/v1/charges', params as Record<string, unknown>)
+    return this.client.post<Charge>('/v1/charges', params)
   }
 
   /**
@@ -65,7 +65,7 @@ export class Charges {
    * ```
    */
   async list(params?: ChargeListParams): Promise<ListResponse<Charge>> {
-    return this.client.get<ListResponse<Charge>>('/v1/charges', params as Record<string, unknown>)
+    return this.client.get<ListResponse<Charge>>('/v1/charges', params)
   }
 
   /**

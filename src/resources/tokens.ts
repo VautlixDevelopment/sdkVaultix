@@ -37,7 +37,7 @@ export class Tokens {
    * ```
    */
   async create(params: TokenCreateParams): Promise<Token> {
-    return this.client.post<Token>('/v1/tokens', params as Record<string, unknown>)
+    return this.client.post<Token>('/v1/tokens', params)
   }
 
   /**

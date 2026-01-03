@@ -103,7 +103,7 @@ export class Transactions {
    * ```
    */
   async list(params?: TransactionListParams): Promise<ListResponse<Transaction>> {
-    return this.client.get<ListResponse<Transaction>>('/v1/transactions', params as Record<string, unknown>)
+    return this.client.get<ListResponse<Transaction>>('/v1/transactions', params)
   }
 
   /**

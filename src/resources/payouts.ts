@@ -44,7 +44,7 @@ export class Payouts {
    * ```
    */
   async create(params: PayoutCreateParams): Promise<Payout> {
-    return this.client.post<Payout>('/v1/payouts', params as Record<string, unknown>)
+    return this.client.post<Payout>('/v1/payouts', params)
   }
 
   /**
@@ -66,7 +66,7 @@ export class Payouts {
    * ```
    */
   async list(params?: PayoutListParams): Promise<ListResponse<Payout>> {
-    return this.client.get<ListResponse<Payout>>('/v1/payouts', params as Record<string, unknown>)
+    return this.client.get<ListResponse<Payout>>('/v1/payouts', params)
   }
 
   /**

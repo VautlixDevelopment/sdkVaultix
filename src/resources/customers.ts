@@ -29,7 +29,7 @@ export class Customers {
    * ```
    */
   async create(params: CustomerCreateParams): Promise<Customer> {
-    return this.client.post<Customer>('/v1/customers', params as Record<string, unknown>)
+    return this.client.post<Customer>('/v1/customers', params)
   }
 
   /**
@@ -50,7 +50,7 @@ export class Customers {
    * ```
    */
   async update(id: string, params: CustomerUpdateParams): Promise<Customer> {
-    return this.client.put<Customer>(`/v1/customers/${id}`, params as Record<string, unknown>)
+    return this.client.put<Customer>(`/v1/customers/${id}`, params)
   }
 
   /**
@@ -64,6 +64,6 @@ export class Customers {
    * List all customers
    */
   async list(params?: ListParams): Promise<ListResponse<Customer>> {
-    return this.client.get<ListResponse<Customer>>('/v1/customers', params as Record<string, unknown>)
+    return this.client.get<ListResponse<Customer>>('/v1/customers', params)
   }
 }
