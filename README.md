@@ -1,21 +1,17 @@
-# @vaultix/sdk
+# Vaultix SDK
 
 Official Node.js/TypeScript SDK for the Vaultix Payment API.
 
 ## Installation
 
 ```bash
-npm install @vaultix/sdk
-# or
-yarn add @vaultix/sdk
-# or
-pnpm add @vaultix/sdk
+npm install github:VautlixDevelopment/sdkVaultix
 ```
 
 ## Quick Start
 
 ```typescript
-import Vaultix from '@vaultix/sdk'
+import Vaultix from 'sdkvaultix'
 
 const vaultix = new Vaultix({
   secretKey: 'sk_live_...',
@@ -275,7 +271,7 @@ const charge: Charge = await vaultix.charges.create(params)
 
 ## Documentation
 
-Full API documentation: https://docs.vaultix.global
+Full API documentation: https://vaultix.global/developers/docs
 
 ## License
 
